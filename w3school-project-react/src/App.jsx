@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import MoviesGrid from './components/MoviesGrid';
 
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
     
     <div className='container'>
       <Header/>
+      <MoviesGrid/>
+
     </div>
     </>
 
