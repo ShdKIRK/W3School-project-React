@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles.css';
+import "../styles.css";
 
 export default function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
   const handleError = (e) => {
@@ -17,26 +17,26 @@ export default function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
   };
 
   return (
-    <div 
-      className={`movie-card ${isWatchlisted ? 'watchlisted' : ''}`} 
+    <div
+      className={`movie-card ${isWatchlisted ? "watchlisted" : ""}`}
       onClick={() => toggleWatchlist(movie.id)}
     >
-      <img 
-        src={`images/${movie.image}`} 
-        alt={movie.title} 
+      <img
+        src={`images/${movie.image}`}
+        alt={movie.title}
         onError={handleError}
       />
       <div className="movie-card-info">
         <h3 className="movie-card-title">{movie.title}</h3>
         <div>
-        <span className="movie-card-genre">{movie.genre}</span>
-        <span className={`movie-card-rating ${getRatingClass(movie.rating)}`}>
-          {movie.rating}
-        </span>
+          <span className="movie-card-genre">{movie.genre}</span>
+          <span className={`movie-card-rating ${getRatingClass(movie.rating)}`}>
+            {movie.rating}
+          </span>
         </div>
-      
+
         <label className="switch">
-          <input 
+          <input
             type="checkbox"
             checked={isWatchlisted}
             onChange={() => toggleWatchlist(movie.id)}
@@ -47,7 +47,7 @@ export default function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
             </span>
           </span>
         </label>
+      </div>
     </div>
-  </div>
   );
 }
