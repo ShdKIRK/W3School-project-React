@@ -1,10 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles.css";
 import MovieCard from "./MovieCard";
 
 export default function MoviesGrid() {
-  const [movies, setMovies] = useState([]);
   const [searchTerm, setSearch] = useState("");
   const [genre, setGenre] = useState("All Genre");
   const [rating, setRating] = useState("All");
@@ -39,20 +38,7 @@ export default function MoviesGrid() {
     matchesRating(movie, rating)
   );
 
-  useEffect(() => {
-    fetch("movies.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch movies");
-        }
-        return response.json();
-      })
-      .then((data) => setMovies(data))
-      .catch((error) => {
-        console.error("Error fetching movies:", error);
-      });
-  }, []);
-
+ 
   return (
     <div>
       <input
